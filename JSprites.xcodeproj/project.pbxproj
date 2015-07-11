@@ -8,13 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		20F9A19F1B51454700BB813E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F9A19E1B51454700BB813E /* AppDelegate.swift */; };
-		20F9A1A11B51454700BB813E /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 20F9A1A01B51454700BB813E /* GameScene.sks */; };
 		20F9A1A31B51454700BB813E /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F9A1A21B51454700BB813E /* GameScene.swift */; };
 		20F9A1A51B51454700BB813E /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F9A1A41B51454700BB813E /* GameViewController.swift */; };
 		20F9A1A81B51454700BB813E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20F9A1A61B51454700BB813E /* Main.storyboard */; };
 		20F9A1AA1B51454700BB813E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20F9A1A91B51454700BB813E /* Images.xcassets */; };
 		20F9A1AD1B51454700BB813E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20F9A1AB1B51454700BB813E /* LaunchScreen.xib */; };
 		20F9A1B91B51454700BB813E /* JSpritesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F9A1B81B51454700BB813E /* JSpritesTests.swift */; };
+		20F9A1C31B514DC500BB813E /* DrawImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F9A1C21B514DC500BB813E /* DrawImages.swift */; };
+		20F9A1C51B5160A200BB813E /* MyStructs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F9A1C41B5160A200BB813E /* MyStructs.swift */; };
+		20F9A1C71B516B8000BB813E /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F9A1C61B516B8000BB813E /* Language.swift */; };
+		20F9A1CA1B516BC200BB813E /* hu.json in Resources */ = {isa = PBXBuildFile; fileRef = 20F9A1C91B516BC200BB813E /* hu.json */; };
+		20F9A1CC1B516BDE00BB813E /* ru.json in Resources */ = {isa = PBXBuildFile; fileRef = 20F9A1CB1B516BDE00BB813E /* ru.json */; };
+		20F9A1CF1B516BE800BB813E /* de.json in Resources */ = {isa = PBXBuildFile; fileRef = 20F9A1CD1B516BE800BB813E /* de.json */; };
+		20F9A1D01B516BE800BB813E /* en.json in Resources */ = {isa = PBXBuildFile; fileRef = 20F9A1CE1B516BE800BB813E /* en.json */; };
+		20F9A1D31B516C0800BB813E /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F9A1D21B516C0800BB813E /* SwiftyJSON.swift */; };
+		20F9A1D51B516C9100BB813E /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F9A1D41B516C9100BB813E /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,7 +39,6 @@
 		20F9A1991B51454700BB813E /* JSprites.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JSprites.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		20F9A19D1B51454700BB813E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		20F9A19E1B51454700BB813E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		20F9A1A01B51454700BB813E /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
 		20F9A1A21B51454700BB813E /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		20F9A1A41B51454700BB813E /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		20F9A1A71B51454700BB813E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -40,6 +47,15 @@
 		20F9A1B21B51454700BB813E /* JSpritesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JSpritesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		20F9A1B71B51454700BB813E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		20F9A1B81B51454700BB813E /* JSpritesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSpritesTests.swift; sourceTree = "<group>"; };
+		20F9A1C21B514DC500BB813E /* DrawImages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawImages.swift; sourceTree = "<group>"; };
+		20F9A1C41B5160A200BB813E /* MyStructs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyStructs.swift; sourceTree = "<group>"; };
+		20F9A1C61B516B8000BB813E /* Language.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
+		20F9A1C91B516BC200BB813E /* hu.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = hu.json; sourceTree = "<group>"; };
+		20F9A1CB1B516BDE00BB813E /* ru.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ru.json; sourceTree = "<group>"; };
+		20F9A1CD1B516BE800BB813E /* de.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = de.json; sourceTree = "<group>"; };
+		20F9A1CE1B516BE800BB813E /* en.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = en.json; sourceTree = "<group>"; };
+		20F9A1D21B516C0800BB813E /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
+		20F9A1D41B516C9100BB813E /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,11 +98,15 @@
 			isa = PBXGroup;
 			children = (
 				20F9A19E1B51454700BB813E /* AppDelegate.swift */,
-				20F9A1A01B51454700BB813E /* GameScene.sks */,
 				20F9A1A21B51454700BB813E /* GameScene.swift */,
 				20F9A1A41B51454700BB813E /* GameViewController.swift */,
 				20F9A1A61B51454700BB813E /* Main.storyboard */,
 				20F9A1A91B51454700BB813E /* Images.xcassets */,
+				20F9A1C21B514DC500BB813E /* DrawImages.swift */,
+				20F9A1C41B5160A200BB813E /* MyStructs.swift */,
+				20F9A1C61B516B8000BB813E /* Language.swift */,
+				20F9A1D21B516C0800BB813E /* SwiftyJSON.swift */,
+				20F9A1D41B516C9100BB813E /* Extensions.swift */,
 				20F9A1AB1B51454700BB813E /* LaunchScreen.xib */,
 				20F9A19C1B51454700BB813E /* Supporting Files */,
 			);
@@ -96,6 +116,7 @@
 		20F9A19C1B51454700BB813E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				20F9A1D11B516BF100BB813E /* Languages */,
 				20F9A19D1B51454700BB813E /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -116,6 +137,17 @@
 				20F9A1B71B51454700BB813E /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		20F9A1D11B516BF100BB813E /* Languages */ = {
+			isa = PBXGroup;
+			children = (
+				20F9A1C91B516BC200BB813E /* hu.json */,
+				20F9A1CB1B516BDE00BB813E /* ru.json */,
+				20F9A1CD1B516BE800BB813E /* de.json */,
+				20F9A1CE1B516BE800BB813E /* en.json */,
+			);
+			name = Languages;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -198,10 +230,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20F9A1CF1B516BE800BB813E /* de.json in Resources */,
+				20F9A1CA1B516BC200BB813E /* hu.json in Resources */,
 				20F9A1AD1B51454700BB813E /* LaunchScreen.xib in Resources */,
 				20F9A1AA1B51454700BB813E /* Images.xcassets in Resources */,
-				20F9A1A11B51454700BB813E /* GameScene.sks in Resources */,
 				20F9A1A81B51454700BB813E /* Main.storyboard in Resources */,
+				20F9A1CC1B516BDE00BB813E /* ru.json in Resources */,
+				20F9A1D01B516BE800BB813E /* en.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -219,9 +254,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20F9A1C51B5160A200BB813E /* MyStructs.swift in Sources */,
 				20F9A1A31B51454700BB813E /* GameScene.swift in Sources */,
 				20F9A1A51B51454700BB813E /* GameViewController.swift in Sources */,
+				20F9A1D51B516C9100BB813E /* Extensions.swift in Sources */,
+				20F9A1C71B516B8000BB813E /* Language.swift in Sources */,
 				20F9A19F1B51454700BB813E /* AppDelegate.swift in Sources */,
+				20F9A1D31B516C0800BB813E /* SwiftyJSON.swift in Sources */,
+				20F9A1C31B514DC500BB813E /* DrawImages.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -353,6 +393,7 @@
 				INFOPLIST_FILE = JSprites/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -363,6 +404,7 @@
 				INFOPLIST_FILE = JSprites/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
