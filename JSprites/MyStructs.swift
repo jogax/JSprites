@@ -191,7 +191,7 @@ struct GV {
     static let backgroundColor      = UIColor(red: 0xff/0xff, green: 0xff/0xff, blue: 0xff/0xff, alpha: 1)
     static let lightBackgroundColor = UIColor(red: 0xc3/0xff, green: 0xfd/0xff, blue: 0xb8/0xff, alpha: 1)
     static let clearWhiteColor      = UIColor(red: 0xff/0xff, green: 0xff/0xff, blue: 0xff/0xff, alpha: 0.7)
-
+    static let IPAD                 = UIDevice.currentDevice().model.substring(0, length: 4) == "iPad"
 
     // generierung new game
     static let createNewGame = false

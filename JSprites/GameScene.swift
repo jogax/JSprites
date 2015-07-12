@@ -55,30 +55,49 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var containers = [SKSpriteNode]()
     var countColorsProContainer = [Int]()
     var movedFromNode: SKNode!
+    var backButton: SKButton?
+    
     
     override func didMoveToView(view: SKView) {
-        let xDelta = size.width / CGFloat(countContainers)
-        for index in 0..<countContainers {
-            let aktColor = GV.colorSets[GV.colorSetIndex][index + 1].CGColor
-            let containerTexture = SKTexture(image: images.drawCircle(CGSizeMake(50,50), imageColor: aktColor))
-            let centerX = (size.width / CGFloat(countContainers)) * CGFloat(index) + xDelta / 2
-            let centerY = size.height * 0.85
-            containers.append(SKSpriteNode(texture: containerTexture))
-            containers[index].position = CGPoint(x: centerX, y: centerY)
-            containers[index].name = "\(index)"
-            containers[index].physicsBody = SKPhysicsBody(rectangleOfSize: containers[index].size) // 1
-            containers[index].physicsBody?.dynamic = true // 2
-            containers[index].physicsBody?.categoryBitMask = PhysicsCategory.Container // 3
-            containers[index].physicsBody?.contactTestBitMask = PhysicsCategory.Sprite // 4
-            containers[index].physicsBody?.collisionBitMask = PhysicsCategory.None // 5
-            countColorsProContainer.append(maxGeneratedColorCount)
-            addChild(containers[index])
-        }
+        generateGame()
+        let buttonTextureNormal = SKTexture(image: images.drawButton(CGSizeMake(100,40), imageColor: UIColor.blueColor().CGColor))
+        let buttonTextureSelected = SKTexture(image: images.drawButton(CGSizeMake(95,38), imageColor: UIColor.blueColor().CGColor))
+        backButton = SKButton(normalTexture: buttonTextureNormal, selectedTexture: buttonTextureSelected, disabledTexture: buttonTextureNormal)
+        backButton!.position = CGPointMake(view.frame.width / 2, view.frame.height * 0.15)
+        backButton!.size = CGSizeMake(view.frame.width / 5, view.frame.height / 15)
+        backButton!.setButtonLabel(title: "Restart", font: "HelveticaBold", fontSize: 15)
+        backButton!.setButtonAction(self, triggerEvent: .TouchUpInside, action:"backButtonPressed")
+        addChild(backButton!)
         backgroundColor = UIColor.whiteColor() //SKColor.whiteColor()
         physicsWorld.gravity = CGVectorMake(0, 0)
         physicsWorld.contactDelegate = self
         generateSprite()
     }
+
+    func generateGame() {
+        let xDelta = size.width / CGFloat(countContainers)
+        for index in 0..<countContainers {
+            let aktColor = GV.colorSets[GV.colorSetIndex][index + 1].CGColor
+            let containerTexture = SKTexture(image: images.drawCircle(CGSizeMake(50,50), imageColor: aktColor))
+            let centerX = (size.width / CGFloat(countContainers)) * CGFloat(index) + xDelta / 2
+            let centerY = size.height * 0.90
+            containers.append(SKSpriteNode(texture: containerTexture))
+            containers[index].position = CGPoint(x: centerX, y: centerY)
+            containers[index].name = "\(index)"
+            containers[index].physicsBody = SKPhysicsBody(circleOfRadius: containers[index].size.width / 3) // 1
+            containers[index].physicsBody?.dynamic = true // 2
+            containers[index].physicsBody?.categoryBitMask = PhysicsCategory.Sprite // 3
+            containers[index].physicsBody?.contactTestBitMask = PhysicsCategory.Container // 4
+            containers[index].physicsBody?.collisionBitMask = PhysicsCategory.None // 5
+            countColorsProContainer.append(maxGeneratedColorCount)
+            addChild(containers[index])
+        }
+    }
+
+    func backButtonPressed() {
+        generateGame() 
+    }
+    
     func generateSprite() {
         let nextTime = Double(GV.random(5, max: 30)) / 15
         var colorTab = [Int]()
@@ -122,11 +141,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             let firstTouch = touches.first as! UITouch
             let touchLocation = firstTouch.locationInNode(self)
 
-            let node = self.nodeAtPoint(touchLocation)
-            node.physicsBody = SKPhysicsBody(circleOfRadius: node. .size.width/2)
+            let node = movedFromNode as! SKSpriteNode
+            node.physicsBody = SKPhysicsBody(circleOfRadius: node.size.width/2)
+            println("nodeSize:\(node.size.width)")
             node.physicsBody?.dynamic = true
-            node.physicsBody?.categoryBitMask = PhysicsCategory.Sprite
-            node.physicsBody?.contactTestBitMask = PhysicsCategory.Container
+            node.physicsBody?.categoryBitMask = PhysicsCategory.Container
+            node.physicsBody?.contactTestBitMask = PhysicsCategory.Sprite
             node.physicsBody?.collisionBitMask = PhysicsCategory.None
             node.physicsBody?.usesPreciseCollisionDetection = true
             let offset = touchLocation - movedFromNode.position
@@ -144,6 +164,33 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             let actionMoveDone = SKAction.removeFromParent()
             movedFromNode.runAction(SKAction.sequence([actionMove, actionMoveDone]))
         }
+    }
+    
+    func spriteDidCollideWithContainer(sprite:SKSpriteNode, container:SKSpriteNode) {
+        println("Hit")
+        sprite.removeFromParent()
+        
+    }
+    
+    func didBeginContact(contact: SKPhysicsContact) {
+        
+        // 1
+        var firstBody: SKPhysicsBody
+        var secondBody: SKPhysicsBody
+        if contact.bodyA.categoryBitMask < contact.bodyB.categoryBitMask {
+            firstBody = contact.bodyA
+            secondBody = contact.bodyB
+        } else {
+            firstBody = contact.bodyB
+            secondBody = contact.bodyA
+        }
+        println("firstBody:\(firstBody.categoryBitMask), secondBody:\(secondBody.categoryBitMask), PhysicsCategory.Sprite: \(PhysicsCategory.Sprite), PhysicsCategory.Container:\(PhysicsCategory.Container)")
+        // 2
+        if ((firstBody.categoryBitMask & PhysicsCategory.Container != 0) &&
+            (secondBody.categoryBitMask & PhysicsCategory.Sprite != 0)) {
+                spriteDidCollideWithContainer(firstBody.node as! SKSpriteNode, container: secondBody.node as! SKSpriteNode)
+        }
+        
     }
 
 }

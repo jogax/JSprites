@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		20E076C91B52AF8A002D8B8A /* SKButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E076C81B52AF8A002D8B8A /* SKButton.swift */; };
 		20F9A19F1B51454700BB813E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F9A19E1B51454700BB813E /* AppDelegate.swift */; };
 		20F9A1A31B51454700BB813E /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F9A1A21B51454700BB813E /* GameScene.swift */; };
 		20F9A1A51B51454700BB813E /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F9A1A41B51454700BB813E /* GameViewController.swift */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		20E076C81B52AF8A002D8B8A /* SKButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKButton.swift; sourceTree = "<group>"; };
 		20F9A1991B51454700BB813E /* JSprites.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JSprites.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		20F9A19D1B51454700BB813E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		20F9A19E1B51454700BB813E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -76,6 +78,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		20E076CA1B52B5A9002D8B8A /* Pictures */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Pictures;
+			sourceTree = "<group>";
+		};
 		20F9A1901B51454700BB813E = {
 			isa = PBXGroup;
 			children = (
@@ -99,6 +108,7 @@
 			children = (
 				20F9A19E1B51454700BB813E /* AppDelegate.swift */,
 				20F9A1A21B51454700BB813E /* GameScene.swift */,
+				20E076C81B52AF8A002D8B8A /* SKButton.swift */,
 				20F9A1A41B51454700BB813E /* GameViewController.swift */,
 				20F9A1A61B51454700BB813E /* Main.storyboard */,
 				20F9A1A91B51454700BB813E /* Images.xcassets */,
@@ -116,6 +126,7 @@
 		20F9A19C1B51454700BB813E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				20E076CA1B52B5A9002D8B8A /* Pictures */,
 				20F9A1D11B516BF100BB813E /* Languages */,
 				20F9A19D1B51454700BB813E /* Info.plist */,
 			);
@@ -261,6 +272,7 @@
 				20F9A1C71B516B8000BB813E /* Language.swift in Sources */,
 				20F9A19F1B51454700BB813E /* AppDelegate.swift in Sources */,
 				20F9A1D31B516C0800BB813E /* SwiftyJSON.swift in Sources */,
+				20E076C91B52AF8A002D8B8A /* SKButton.swift in Sources */,
 				20F9A1C31B514DC500BB813E /* DrawImages.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -393,7 +405,7 @@
 				INFOPLIST_FILE = JSprites/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -404,7 +416,7 @@
 				INFOPLIST_FILE = JSprites/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -461,6 +473,7 @@
 				20F9A1BE1B51454700BB813E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		20F9A1BF1B51454700BB813E /* Build configuration list for PBXNativeTarget "JSpritesTests" */ = {
 			isa = XCConfigurationList;
@@ -469,6 +482,7 @@
 				20F9A1C11B51454700BB813E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
