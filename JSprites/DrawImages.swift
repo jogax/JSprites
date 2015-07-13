@@ -19,7 +19,7 @@ class DrawImages {
     
     func drawCircle(size: CGSize, imageColor: CGColor) -> UIImage {
         let size = size
-        Let a = 0
+        let a = 0
         let endAngle = CGFloat(2*M_PI)
 
         UIGraphicsBeginImageContextWithOptions(size, opaque, scale)
